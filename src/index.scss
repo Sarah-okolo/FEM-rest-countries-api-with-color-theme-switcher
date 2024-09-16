@@ -1,5 +1,20 @@
+@import 'variables';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.card {
+  width: 150px;
+  height: 200px;
+  background-color: $card-bg-color;
+  color: $card-text-color;
 }

@@ -3,7 +3,22 @@
 // Colors
 $Dark-blue: hsl(209, 23%, 22%);
 $Very-dark-blue: hsl(207, 26%, 17%);
-$Very-dark-blue: hsl(200, 15%, 8%);
+$Deep-dark-blue: hsl(200, 15%, 8%);
 $Dark-gray: hsl(0, 0%, 52%);
 $Very-light-gray: hsl(0, 0%, 98%);
 $White: hsl(0, 0%, 100%);
+
+// Light Mode
+$bg-color: $Very-light-gray;
+$text-color: $Dark-blue;
+$card-bg-color: $White;
+$card-text-color: $Dark-blue;
+
+
+// Dark Mode
+.darkMode {
+  $bg-color: $Very-dark-blue;
+  $text-color: $Very-light-gray;
+  $card-bg-color: $Dark-blue;
+  $card-text-color: $Very-light-gray;
+}
