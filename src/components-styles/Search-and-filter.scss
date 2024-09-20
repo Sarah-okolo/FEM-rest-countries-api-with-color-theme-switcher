@@ -1,0 +1,95 @@
+@import '../variables';
+
+#search-and-filter {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 90px;
+  z-index: 500;
+}
+
+#search-box, #filter-box, .filter-regions-dropdown {
+  @include cardStyles;
+}
+
+#search-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: default;
+
+  ion-icon {
+    font-size: 17px;
+    color: $card-text-color;
+  }
+
+  #clear-icon {
+    visibility: hidden;
+    cursor: pointer;
+  }
+
+  input {
+    width: 250px;
+    outline: none;
+    font-weight: 300;
+    font-size: 1.05em;
+    border: none;
+    padding: 3px;
+    transition: $trans-time;
+
+    &::placeholder {
+      color: $card-text-color;
+      font-size: 1em;
+    }
+  }
+}
+
+#filter-container {
+  position: relative;
+}
+
+#filter-box {
+  transition: $trans-time;
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    transform: $hover-scale;
+  }
+}
+
+#filter-arrow {
+  margin-left: 30px;
+}
+
+.filter-regions-dropdown {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 0px;
+  padding: 0 18px;
+  margin-top: 5px;
+  z-index: 100;
+  transition: $trans-time;
+
+  li {
+    list-style-type: none;
+    margin-top: 6px;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}
+
+
+.reveal {
+  height: 170px;
+  padding: 10px 18px;
+}
+
+.active {
+  font-weight: 700;
+  margin-left: 5px;
+}

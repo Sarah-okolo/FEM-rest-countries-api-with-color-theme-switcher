@@ -8,17 +8,31 @@ $Dark-gray: hsl(0, 0%, 52%);
 $Very-light-gray: hsl(0, 0%, 98%);
 $White: hsl(0, 0%, 100%);
 
+// card styles
+$hover-scale: scale(1.05);
+$bdr-rds: 4px;
+$trans-time: ease .5s;
+
 // Light Mode
 $bg-color: $Very-light-gray;
-$text-color: $Dark-blue;
+$text-color: $Very-dark-blue;
 $card-bg-color: $White;
-$card-text-color: $Dark-blue;
-
+$card-text-color: $Dark-gray;
+$shadow-color: rgb(229, 226, 226);
 
 // Dark Mode
 .darkMode {
   $bg-color: $Very-dark-blue;
-  $text-color: $Very-light-gray;
+  $text-color: $White;
   $card-bg-color: $Dark-blue;
   $card-text-color: $Very-light-gray;
+  $shadow-color: rgb(216, 214, 214);
+}
+
+@mixin cardStyles {
+  background-color: $card-bg-color;
+  box-shadow: 1px -1px 8px $shadow-color;
+  border-radius: $bdr-rds;
+  padding: 12px 20px;
+  cursor: pointer;
 }

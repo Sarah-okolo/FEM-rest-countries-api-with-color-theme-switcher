@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: .9rem;
+  font-weight: 600;
 }
 
 body {
@@ -12,9 +14,59 @@ body {
   color: $text-color;
 }
 
-.card {
-  width: 150px;
-  height: 200px;
+#root {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+ion-icon {
+  position: relative;
+  top: 2px;
+}
+
+header {
   background-color: $card-bg-color;
-  color: $card-text-color;
+  padding: 15px 40px;
+  box-shadow: 0 0 10px $shadow-color;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 501;
+
+  a {
+    color: $text-color;
+    font-weight: 900;
+    font-size: 25px;
+    text-decoration: none;
+  }
+
+  #theme-switch-container {
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: $trans-time;
+
+    &:hover {
+      transform: $hover-scale;
+    }
+
+    #theme-icon {
+      margin-right: 6px;
+    }
+  }
+}
+
+#main-content {
+  padding: 40px;
+}
+
+#countries-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // sets the minimum width of each card to 250px and the maximum width to 1fr (grow card width to fill up the available space)
+  grid-column-gap: 50px;
+  grid-row-gap: 60px;
+  justify-content: center;
+  margin: 40px 0;
 }
