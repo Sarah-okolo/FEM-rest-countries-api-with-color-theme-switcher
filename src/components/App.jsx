@@ -1,23 +1,25 @@
-import { useState } from 'react'
-import Header from './Header'
-import SearchAndFilter from './Search-and-filter'
-import CountriesHome from './CountriesHome'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { MyContextsProvider } from '../contexts'
-// import CountriesDetails from './CountriesDetails'
+import Header from './Header'
+import CountriesHome from '../pages/CountriesHome'
+import CountriesDetails from '../pages/CountriesDetails'
+import PageNotFound from '../pages/PageNotFound'
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <MyContextsProvider>
         <Header />
         <main id='main-content'>
-          <SearchAndFilter />
-          <CountriesHome />
-          {/* <CountriesDetails /> */}
+          <Routes>
+            <Route path='/' element={<CountriesHome />} />
+            <Route path='/country/:countryName' element={<CountriesDetails />} />
+            <Route path='*' element={<PageNotFound />} />
+          </Routes>
         </main>
       </MyContextsProvider>
-    </>
+    </BrowserRouter>
   )
 }
 

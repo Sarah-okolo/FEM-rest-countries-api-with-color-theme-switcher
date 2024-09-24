@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState, useRef } from 'react'
-import Cards from './Cards'
-import NoMatch from './NoMatch'
+import {Link} from 'react-router-dom'
+import Cards from '/src/components/Cards'
+import NoMatch from '/src/components/NoMatch'
+import SearchAndFilter from '/src/components/Search-and-filter'
 import { CountriesDataContext, SearchInputContext, SelectedRegionContext } from '../contexts'
 
 
@@ -49,6 +51,7 @@ function CountriesHome() {
     }
   }, [filteredCountries, currentBatchIndex])
 
+  // Resets the scroll position to the top when the search input or selected region changes.
   useEffect(() => {
     if (document.documentElement.scrollTop !== 0) {
       document.documentElement.scrollTop = 0;
@@ -59,19 +62,22 @@ function CountriesHome() {
 
   return (
     <>
+    <SearchAndFilter />
+
     <div id="countries-container" ref={countriesContainerRef}>
       {
         filteredCountries.length > 0 ? (    
           filteredCountries.slice( 0, currentBatchIndex + 16 ).map((country, index) => (
-            <Cards
-              key={index}
-              C_flag={country.flag}
-              C_flagImgAlt={`${country.name} flag`}
-              C_name={country.name}
-              C_pop={country.population.toLocaleString()}
-              C_region={country.region}
-              C_capital={country.capital}
-            />
+            <Link to={`/country/${country.name}`} key={index} style={{textDecoration: 'none', color: 'initial'}}>
+              <Cards
+                C_flag={country.flag}
+                C_flagImgAlt={`${country.name} flag`}
+                C_name={country.name}
+                C_pop={country.population ? country.population.toLocaleString() : '0'}
+                C_region={country.region ? country.region : 'No region'}
+                C_capital={country.capital ? country.capital : 'No capital'}
+              />
+            </Link>
           ))
         ) : (
           <NoMatch />

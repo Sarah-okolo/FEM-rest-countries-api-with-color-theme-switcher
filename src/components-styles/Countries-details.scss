@@ -31,12 +31,10 @@
 .flag-container {
   width: 45%;
   aspect-ratio: 1.7/1;
-  background-color: green;
 }
 
 .country-details {
   width: 45%;
-  // background-color: pink;
   padding: 10px 0 20px;
   display: flex;
   flex-direction: column;
@@ -61,6 +59,7 @@
 .country-flag {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 #all-details {
@@ -68,4 +67,20 @@
   justify-content: space-between;
   gap: 15px;
   margin: 15px 20px 25px 0;
+}
+
+.border-country {
+  @include cardStyles;
+  padding: 5px 15px;
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  transition: $trans-time;
+
+  &:hover {
+    transform: $hover-scale;
+  }
+
+  span {
+    font-weight: 600;
+  }
 }

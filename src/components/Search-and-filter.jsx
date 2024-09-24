@@ -3,22 +3,26 @@ import '../components-styles/Search-and-filter.scss'
 import { SearchInputContext, SelectedRegionContext } from '../contexts'
 
 function SearchAndFilter() {
-  const {setSearchInput} = useContext(SearchInputContext);
-  const {setSelectedRegion} = useContext(SelectedRegionContext);
-
+  const {searchInput, setSearchInput} = useContext(SearchInputContext);
+  const {selectedRegion, setSelectedRegion} = useContext(SelectedRegionContext);
   const searchBoxRef = useRef(null);
   const clearIconRef = useRef(null);
   const filterBoxRef = useRef(null);
   const filterArrowRef = useRef(null);
   const regionsDropdownRef = useRef(null);
 
+
   const handleInputState = () => {
-    if (searchBoxRef.current.value.length > 0) {
+    if (searchBoxRef.current.value !== '') {
       clearIconRef.current.style.visibility="visible";
     }
     else {
       clearIconRef.current.style.visibility="hidden"
     }
+  }
+
+  const handleSearch = () => {
+    setSearchInput(searchBoxRef.current.value);
   }
 
   const clearIconFunc = () => {
@@ -35,26 +39,31 @@ function SearchAndFilter() {
       : "chevron-down-outline";
   }
 
-  const handleSearch = () => {
-      setSearchInput(searchBoxRef.current.value);
-  }
-
   useEffect(() => {
+    // Set the search box value to the search input value on component mount.
+    searchBoxRef.current.value = searchInput; 
+    if (searchBoxRef.current.value !== '') clearIconRef.current.style.visibility="visible";
+    
+    // Set the filter box text content to the selected region on component mount.
+    filterBoxRef.current.textContent = selectedRegion; 
     const regions = document.querySelectorAll('.region');
-    regions[0].classList.add('active');
+    const currentRegion = Array.from(regions).find(region => region.textContent === selectedRegion);
+    if (currentRegion) currentRegion.classList.add('active');
+    if(selectedRegion == 'All') filterBoxRef.current.textContent = 'Filter by Region'
+
+    // Loops through and add event listener to each item in the regions dropdown list.
     regions.forEach(region => {
       region.addEventListener('click', (e) => {
         regions.forEach(reg => reg.classList.remove('active'));
         setSelectedRegion(e.target.textContent);
+        e.target.classList.add('active')
         if(filterBoxRef.current.textContent !== 'All')
           filterBoxRef.current.textContent = e.target.textContent;
         else
           filterBoxRef.current.textContent = 'Filter by Region'
-        e.target.classList.add('active')
       })
     })
-
-
+    // Remove event listeners when the component unmounts.
     return () => {
       regions.forEach(region => {
         region.removeEventListener('click', (e) => {
