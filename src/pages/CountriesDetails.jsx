@@ -1,13 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import '../components-styles/Countries-details.scss'
+import fetchCountries from '../_utilities'
 import { CountriesDataContext } from '../contexts'
 
 function CountriesDetails() {
-  const { countriesData } = useContext(CountriesDataContext);
+  const { countriesData, setCountriesData } = useContext(CountriesDataContext);
   const {countryName} = useParams();
+  const [selectedCountry, setSelectedCountry] = useState({}); // Find and store the selected country from the countries data.
+
+  // checks if the countries data state is empty on component mount, if it is, re-fetch the data.
+  useEffect(() => {
+    if (countriesData.length <= 0) {
+    fetchCountries().then(countries => setCountriesData(countries));
+    }
+  }, [])
+
   // Find and store the selected country from the countries data.
-  const selectedCountry = countriesData.find(country => country.name === countryName);
+  useEffect(() => {
+    if (countriesData.length > 0) {
+      setSelectedCountry(preval => preval = countriesData.find(country => country.name === countryName));
+    }
+  }, [countriesData, countryName])
 
 
   return (

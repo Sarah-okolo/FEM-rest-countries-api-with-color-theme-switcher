@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import Cards from '/src/components/Cards'
 import NoMatch from '/src/components/NoMatch'
 import SearchAndFilter from '/src/components/Search-and-filter'
+import fetchCountries from '../_utilities'
 import { CountriesDataContext, SearchInputContext, SelectedRegionContext } from '../contexts'
 
 
@@ -13,17 +14,9 @@ function CountriesHome() {
   const [currentBatchIndex, setCurrentBatchIndex] = useState(0);
   const countriesContainerRef = useRef(null)
 
-  const fetchCountries = async () => {
-    try {
-      const res = await fetch('/data.json')
-      setCountriesData(await res.json())
-    } catch (err) {
-      console.log(`Opps, seems an error occured: ${err}`)
-    }
-  }
-
   useEffect(() => {
-    fetchCountries();
+    // Fetches the countries data and stores it in the context.
+    fetchCountries().then(countries => setCountriesData(countries));
   }, [])
 
   // filters the countries data based on the search input or selected region.
