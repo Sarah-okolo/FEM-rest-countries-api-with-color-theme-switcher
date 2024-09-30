@@ -78,10 +78,11 @@
   &:hover {
     transform: $hover-scale;
   }
+}
 
-  span {
-    font-weight: 600;
-  }
+#bdr-wrapper span {
+  font-weight: 600;
+  color: $card-text-color;
 }
 
 #bdr-wrapper {

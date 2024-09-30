@@ -59,6 +59,7 @@ function CountriesHome() {
 
     <div id="countries-container" ref={countriesContainerRef}>
       {
+      countriesData.length > 0 ? (
         filteredCountries.length > 0 ? (    
           filteredCountries.slice( 0, currentBatchIndex + 16 ).map((country, index) => (
             <Link to={`/country/${country.name}`} key={index} style={{textDecoration: 'none', color: 'initial'}}>
@@ -74,6 +75,9 @@ function CountriesHome() {
           ))
         ) : (
           <NoMatch />
+        )
+      ) : (
+          <div id="loading"><ion-icon name="refresh"></ion-icon></div>
         )
       }
     </div>
