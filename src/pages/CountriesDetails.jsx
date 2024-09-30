@@ -7,6 +7,7 @@ import { CountriesDataContext } from '../contexts'
 function CountriesDetails() {
   const { countriesData, setCountriesData } = useContext(CountriesDataContext);
   const {countryName} = useParams();
+  // check if the countryName is a valid name in the countrydata first / fallback to page not found.
   const [selectedCountry, setSelectedCountry] = useState({}); // Find and store the selected country from the countries data.
 
   // checks if the countries data state is empty on component mount, if it is, re-fetch the data.
