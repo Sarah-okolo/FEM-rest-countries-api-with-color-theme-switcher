@@ -72,7 +72,7 @@ header {
 
 @media screen and (max-width: 470px) {
   header {
-    padding: 20px 15px;
+    padding: 20px 18px;
 
     a {
       font-size: 20px;
@@ -80,13 +80,13 @@ header {
   }
 
   #main-content {
-    padding: 25px 15px;
+    padding: 25px 18px;
   }
 
   #countries-container {
     display: grid;
     grid-template-columns: 1fr; // one column
     grid-row-gap: 50px;
-    padding: 0 15px;
+    padding: 0 18px;
   }
 }
