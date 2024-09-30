@@ -60,7 +60,7 @@ function CountriesDetails() {
                     <span className='border-country'>{borderCountry.name}</span>
                   </Link>
                 )})
-              : <span>No border countries</span>}
+              : <span>No bordering countries</span>}
               </div>
             </div>
           </div>
