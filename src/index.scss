@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -72,10 +72,10 @@ header {
 
 @media screen and (max-width: 470px) {
   header {
-    padding: 15px;
+    padding: 20px 15px;
 
     a {
-      font-size: 17px;
+      font-size: 20px;
     }
   }
 
