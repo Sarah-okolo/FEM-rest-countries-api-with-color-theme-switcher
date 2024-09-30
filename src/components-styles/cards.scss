@@ -3,7 +3,7 @@
 .card {
   @include cardStyles;
   width: 100%; //  take up the entire available width inside each grid cell in each column of parent container.
-  max-width: 400px;
+  // max-width: 400px;
   height: 350px;
   padding: 0;
   overflow: hidden;

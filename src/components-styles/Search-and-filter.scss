@@ -3,6 +3,7 @@
 #search-and-filter {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   position: sticky;
   top: 90px;
   z-index: 500;
@@ -17,6 +18,8 @@
   justify-content: space-between;
   gap: 10px;
   cursor: default;
+  width: 50%;
+  max-width: 375px;
 
   ion-icon {
     font-size: 17px;
@@ -29,7 +32,7 @@
   }
 
   input {
-    width: 250px;
+    width: 70%;
     outline: none;
     font-weight: 300;
     font-size: 1.05em;
@@ -46,11 +49,12 @@
 
 #filter-container {
   position: relative;
+  width: 180px;
 }
 
 #filter-box {
   transition: $trans-time;
-  width: 180px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 
@@ -83,7 +87,6 @@
   }
 }
 
-
 .reveal {
   height: 170px;
   padding: 10px 18px;
@@ -92,4 +95,16 @@
 .active {
   font-weight: 700;
   margin-left: 5px;
+}
+
+@media screen and (max-width: 470px) {
+  #search-and-filter {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #search-box {
+    width: 100%;
+    max-width: 100%;
+  }
 }

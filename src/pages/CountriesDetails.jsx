@@ -52,16 +52,17 @@ function CountriesDetails() {
             </div>
           </div>
           <div className='border-countries'>
-            <p>Border Countries: {selectedCountry.borders 
+            <div id='bdr-wrapper'><p>Border Countries:</p> <div>{selectedCountry.borders 
               ? selectedCountry.borders.map((border, index) => {
                 const borderCountry = countriesData.find(country => country.alpha3Code === border);
                 return (
                   <Link to={`/country/${borderCountry.name}`} key={index} style={{textDecoration: 'none', color: 'initial'}}>
-                    <span className='border-country'>{border}</span>
+                    <span className='border-country'>{borderCountry.name}</span>
                   </Link>
                 )})
               : <span>No border countries</span>}
-            </p>
+              </div>
+            </div>
           </div>
         </div>
       </div> 
