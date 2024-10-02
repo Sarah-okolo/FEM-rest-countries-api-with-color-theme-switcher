@@ -13,7 +13,6 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -35,17 +34,24 @@ Users should be able to:
 
 #### Solution desktop preview
 
-![](./screenshot.jpg)
+![solution-preview-desktop-home-dark](./design/solution-preview-desktop-home-dark.png)
+
+![solution-preview-desktop-home-light](./design/solution-preview-desktop-home-light.png)
+
+![solution-preview-desktop-details-dark](./design/solution-preview-desktop-details-dark.png)
 
 
 #### Solution mobile preview
 
-![](./screenshot.jpg)
+![solution-preview-mobile-details-light](./design/solution-preview-mobile-details-light.png)
+
+![solution-preview-mobile-home-dark](./design/solution-preview-mobile-home-dark.png)
+
 
 ### Links
 
 - Solution URL: [https://github.com/Sarah-okolo/FEM-rest-countries-api-with-color-theme-switcher](https://github.com/Sarah-okolo/FEM-rest-countries-api-with-color-theme-switcher)
-- Live Site URL: [https://all-the-countries-of-the-world.netlify.app/](https://all-the-countries-of-the-world.netlify.app/)
+- Live Site URL: [where-1n-the-world.netlify.app](https://where-1n-the-world.netlify.app/)
 
 ## My process
 
@@ -54,26 +60,31 @@ Users should be able to:
 - Semantic HTML5 markup
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- [Vite](https://vitejs.dev/) - local dev server
 - [React](https://reactjs.org/) - JS library
-- [Sass/SCSS](https://nextjs.org/) - CSS preprocessor for styling
+- [Sass/SCSS](https://sass-lang.com/) - CSS preprocessor for styling
 
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- **Light dark theme with React and Sass**: 
+  Through this project, I was able to learn about how to implement a light and dark theme using react and sass.
 
-### Continued development
+- **React Routing**:
+  My first time working routes in react. I learnt and understood more about how client-side routing works, along with the different ways to route between pages in react.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- **Infinite Scrolling using React**:
+  I also learnt how to implement infinite scrolling feature in a react app.
+
+- **Live search and filter**:
+  The project's requirement for a search and filter feature provided the perfect opportunity for me to learn how to implement a live search and filter feature in a react app.
+
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [React Tutorial](https://youtu.be/MHn66JJH5zs?si=GyRXO2KeqMCFosPA) - This tutorial helped me understand more about react routing.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Sarah-okolo](https://www.frontendmentor.io/profile/Sarah-okolo)
+- Twitter - [@SahraOke](https://twitter.com/SahraOke)
