@@ -10,12 +10,12 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  background-color: $bg-color;
-  color: $text-color;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 #root {
-  max-width: 2000px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
@@ -25,9 +25,9 @@ ion-icon {
 }
 
 header {
-  background-color: $card-bg-color;
+  background-color: var(--card-bg-color);
   padding: 15px 40px;
-  box-shadow: 0 0 10px $shadow-color;
+  box-shadow: 0 0 10px var(--shadow-color);
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -36,7 +36,7 @@ header {
   z-index: 501;
 
   a {
-    color: $text-color;
+    color: var(--text-color);
     font-weight: 900;
     font-size: 25px;
     text-decoration: none;
@@ -46,7 +46,7 @@ header {
     display: grid;
     place-items: center;
     cursor: pointer;
-    transition: $trans-time;
+    transition: transform $trans-time;
 
     &:hover {
       transform: $hover-scale;
@@ -76,7 +76,6 @@ header {
   ion-icon {
     animation: spin .8s linear infinite;
     font-size: 2.3rem;
-
   }
 
   @keyframes spin {

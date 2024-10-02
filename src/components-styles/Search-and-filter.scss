@@ -23,7 +23,7 @@
 
   ion-icon {
     font-size: 17px;
-    color: $card-text-color;
+    color: var(--card-text-color);
   }
 
   #clear-icon {
@@ -36,12 +36,14 @@
     outline: none;
     font-weight: 300;
     font-size: 1.05em;
+    background-color: transparent;
+    color: var(--text-color);
     border: none;
     padding: 3px;
     transition: $trans-time;
 
     &::placeholder {
-      color: $card-text-color;
+      color: var(--card-text-color);
       font-size: 1em;
     }
   }
@@ -53,7 +55,7 @@
 }
 
 #filter-box {
-  transition: $trans-time;
+  transition: transform $trans-time;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -77,7 +79,7 @@
   padding: 0 18px;
   margin-top: 5px;
   z-index: 100;
-  transition: $trans-time;
+  transition: height $trans-time;
 
   li {
     list-style-type: none;

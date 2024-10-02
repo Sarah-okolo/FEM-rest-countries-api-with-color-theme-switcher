@@ -3,13 +3,14 @@
 .card {
   @include cardStyles;
   width: 100%; //  take up the entire available width inside each grid cell in each column of parent container.
-  // max-width: 400px;
+  max-width: 400px;
   height: 350px;
+  margin: 0 auto;
   padding: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: $trans-time;
+  transition: transform $trans-time;
 
   &:hover {
     transform: $hover-scale;
@@ -39,7 +40,7 @@
 
     span {
       font-weight: 600;
-      color: $card-text-color;
+      color: var(--card-text-color);
     }
   }
 
