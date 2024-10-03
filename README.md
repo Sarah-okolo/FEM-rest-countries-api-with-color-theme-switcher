@@ -53,7 +53,20 @@ Users should be able to:
 - Solution URL: [https://github.com/Sarah-okolo/FEM-rest-countries-api-with-color-theme-switcher](https://github.com/Sarah-okolo/FEM-rest-countries-api-with-color-theme-switcher)
 - Live Site URL: [where-1n-the-world.netlify.app](https://where-1n-the-world.netlify.app/)
 
-## My process
+## My process (in order)
+
+- Created new Vite + React project.
+- Installed Sass as a dependency.
+- Initialized git repo and pushed project to GitHub.
+- Deployed project to live site in Netlify.
+- Created general styles for the app.
+- Created and styled the Countries home page.
+- Fetched and rendered the countries' data.
+- Implemented lazy loading for the countries on the home page.
+- Created the countries search and filter feature.
+- Created the countries details page.
+- Implemented routing for each country from the home page to the details page.
+- Created the app's light/dark theme toggle.
 
 ### Built with
 
