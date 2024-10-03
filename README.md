@@ -60,12 +60,13 @@ Users should be able to:
 - Initialized git repo and pushed project to GitHub.
 - Deployed project to live site in Netlify.
 - Created general styles for the app.
-- Created and styled the Countries home page.
-- Fetched and rendered the countries' data.
+- Created and styled the countries home page.
+- Fetched and rendered the JSON data for the countries.
 - Implemented lazy loading for the countries on the home page.
 - Created the countries search and filter feature.
 - Created the countries details page.
 - Implemented routing for each country from the home page to the details page.
+- Made the app responsive by building out the mobile design.
 - Created the app's light/dark theme toggle.
 
 ### Built with
